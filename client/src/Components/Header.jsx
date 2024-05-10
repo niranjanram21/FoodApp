@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -5,10 +6,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Header.css'
 import assets from '../assets/assets'
 
-function Header() {
+function Header({setShowLogin}) {
   return (
     <Navbar expand="lg" className="">
-      <Container fluid className='py-2'>
+      <Container fluid className='py-3'>
         <Navbar.Brand href="#" >
         <a href="/" className="inline-flex items-center text-2xl font-bold md:text-3xl mx-4 " aria-label="logo">
         <span className="text-slate-800 title1">Yum</span>
@@ -31,9 +32,9 @@ function Header() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action2" className=''><img src={assets.search_icon} alt="" /></Nav.Link>
-            <Nav.Link href="#action2" className=''><img src={assets.basket_icon} alt="" /></Nav.Link>
-            <Nav.Link href="#action2" className='hover:text-yellow-600 hover:underline'>sign in</Nav.Link>
+            <Nav.Link href="#action2" className='mx-3'><img src={assets.search_icon} alt="" /></Nav.Link>
+            <Nav.Link href="#action2" className='mx-3'><img src={assets.basket_icon} alt="" /></Nav.Link>
+            <Nav.Link href="#action2" onClick={()=>setShowLogin(true)} className='border-solid border-2 border-slate-800 rounded-2xl px-3 mx-3 hover:bg-yellow-300'>sign in</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

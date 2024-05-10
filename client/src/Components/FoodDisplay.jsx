@@ -14,6 +14,7 @@ const FoodDisplay = ({ category }) => {
                     <h1 className="text-center mb-2 font-bold text-2xl text-yellow-800">Top Dishes near you!</h1>
                     <div className="flex flex-wrap -m-2">
                         {food_list.map((item, index) => {
+                            // {console.log(category. item.category);}
                             if (category === "All" || category === item.category) {
                                 return (
                                     <div key={index} className="lg:w-1/4 md:w-1/2 p-4 w-full transition duration-300 transform hover:scale-105" style={{ borderRadius: '2rem' }}>
